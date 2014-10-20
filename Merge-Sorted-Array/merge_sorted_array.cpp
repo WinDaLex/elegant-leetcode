@@ -1,9 +1,8 @@
 class Solution {
     public:
         void merge(int A[], int m, int B[], int n) {
-            int i = m - 1, j = n - 1;
-            while (i >= 0 && j >= 0) A[i + j + 1] = A[i] > B[j] ? A[i--] : B[j--];
-            while (i >= 0) A[i + j + 1] = A[i--];
-            while (j >= 0) A[i + j + 1] = B[j--];
+            while (m > 0 && n > 0) A[m + n - 1] = A[m - 1] > B[n - 1] ? A[--m] : B[--n];
+            while (m > 0) A[m + n - 1] = A[--m];
+            while (n > 0) A[m + n - 1] = B[--n];
         }
 };
